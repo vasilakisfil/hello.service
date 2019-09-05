@@ -1,0 +1,13 @@
+[Unit]
+AssertPathExists=/usr/bin/hello
+
+[Service]
+WorkingDirectory=~
+ExecStart=/usr/bin/hello
+Restart=always
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+Alias=hello
+WantedBy=default.target

@@ -1,0 +1,18 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+authors = ["Filippos Vasilakis <vasilakisfil@gmail.com>"]
+edition = "2018"
+
+[package.metadata.deb]
+depends = "$auto, systemd"
+extended-description = "simple hello world test"
+section = "admin"
+priority = "optional"
+assets = [
+    ["target/release/hello-world", "usr/bin/hello", "755"],
+    ["debian/hello.service", "/lib/systemd/system/hello.service", "644"], 
+]
+maintainer-scripts = "debian/scripts"
+
+[dependencies]
